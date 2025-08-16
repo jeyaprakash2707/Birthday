@@ -109,7 +109,7 @@
             animation-delay: 1s;
         }
         
-        .typing-effect {
+         .typing-effect {
             overflow: hidden;
             white-space: normal;
             border-right: 2px solid #ff6b9d;
@@ -175,6 +175,8 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
+            padding: 2rem 1rem;
+            box-sizing: border-box;
         }
 
         .countdown-box {
@@ -214,9 +216,31 @@
         .hidden {
             display: none !important;
         }
+        
+        /* Fix for screen size issues */
+        @media (max-height: 700px) {
+            .countdown-container {
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+            }
+            
+            .mb-8 {
+                margin-bottom: 1.5rem;
+            }
+        }
+        
+        /* Ensure content is properly spaced on all devices */
+        .max-w-2xl {
+            width: 100%;
+            max-width: 42rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
     </style>
 </head>
-<body class="bg-gradient-to-br from-purple-600 via-pink-600 to-blue-600 min-h-screen">
+<body class="bg-gradient-to-br from-purple-600 via-pink-600 to-blue-600 min-h-screen overflow-x-hidden pb-8">
     <div id="particles-js"></div>
     
     <!-- Countdown Overlay (shows until birthday) -->
@@ -224,7 +248,7 @@
         <div class="countdown-container text-center">
             <div class="mb-8">
                 <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 dancing-script">
-                    🎂 Jeya's Birthday Countdown 🎉
+                    🎂 Deepthi's Birthday Countdown 🎉
                 </h1>
                 <p class="text-lg md:text-xl text-white/90 mb-2">
                     Your special day is almost here, my love! ✨
@@ -255,7 +279,7 @@
                 </div>
             </div>
 
-            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-white/20 max-w-2xl">
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-white/20 max-w-2xl mx-auto">
                 <p class="text-lg md:text-xl text-white/90 mb-4">
                     💝 I've prepared something very special for your birthday...
                 </p>
@@ -292,12 +316,12 @@
             <div class="progress h-full rounded-r-full" id="progressBar" style="width: 16.66%"></div>
         </div>
 
-        <div class="flex-1 flex items-center justify-center p-4 pt-8">
+        <div class="flex-1 flex items-center justify-center p-4 py-8 md:py-12 my-4">
             <div class="max-w-2xl w-full text-center">
 
                 <!-- Step 1: Greeting -->
                 <div class="step active" id="step1">
-                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 dancing-script">Happy Birthday, My Love!</h1>
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 dancing-script">Happy Birthday, Dearie..!</h1>
                     <p class="text-lg md:text-xl text-white/90 mb-4">I've created something magical just for you.</p>
                     <p class="text-base md:text-lg text-white/80 mb-8">Are you ready to begin this special journey?</p>
                     <div class="mb-8">
@@ -311,14 +335,14 @@
 
                 <!-- Step 2: Heart Animation -->
                 <div class="step" id="step2">
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4 dancing-script">For You, <span id="displayName">Jeya</span></h2>
-                    <p class="text-lg md:text-xl text-white/90 mb-8">Click on the heart to feel my love for you!</p>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4 dancing-script">For You, <span id="displayName">Mine</span></h2>
+                    <p class="text-lg md:text-xl text-white/90 mb-8">Click on the heart!</p>
                     <div class="mb-8 relative">
                         <div class="heart text-8xl md:text-9xl text-red-500" id="interactiveHeart" onclick="createHearts()">❤️</div>
                         <div id="heartContainer" class="absolute inset-0 pointer-events-none"></div>
                     </div>
                     <div id="heartMessage" class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-white/20">
-                        <p class="text-lg md:text-xl text-white/90">Every beat of my heart whispers your name, <span id="heartName" class="text-pink-300 font-semibold">Jeya</span>.</p>
+                        <p class="text-lg md:text-xl text-white/90">Every beat of my heart whispers your name, Deepthi...❤️
                     </div>
                     <button class="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg" onclick="nextStep()">
                         Continue to Your Message 💝
@@ -330,12 +354,12 @@
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-8 dancing-script">My Special Message For You</h2>
                     <div class="mb-8">
                         <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-4 inline-block border border-white/20">
-                            <img src="https://medias.artmajeur.com/standard/17262319_a-cutel-european-girl-full-bodycartoon-style-illustration-drawn-with-posca-markers-pretty-face-586679414-1.jpg?v=1738402496" 
+                           <img src="../assets/from.jpg" 
                                  class="w-48 h-48 md:w-64 md:h-64 object-cover rounded-2xl mx-auto" alt="Beautiful You">
                         </div>
                     </div>
                     <div id="typedMessage" class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-white/20">
-                        <div class="typing-effect text-lg md:text-xl text-white/90" id="typingText"></div>
+                          <div class="typing-effect text-lg md:text-xl text-white/90" id="typingText"></div>
                     </div>
                     <button class="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg" onclick="nextStep()">
                         See Your Surprise 🎊
@@ -343,42 +367,82 @@
                 </div>
 
                 <!-- Step 4: Memory Lane -->
-                <div class="step" id="step4">
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4 dancing-script">Our Special Moments</h2>
-                    <p class="text-lg md:text-xl text-white/90 mb-8">Some memories I'll cherish forever...</p>
-                    <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-8">
-                        <div class="polaroid bg-white p-4 rounded-2xl shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-300">
-                            <img src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" 
-                                 class="w-48 h-48 md:w-56 md:h-56 object-cover rounded-lg mb-4" alt="Memory 1">
-                            <div class="text-center font-handwriting text-gray-700 text-lg">Our First Date 💕</div>
-                        </div>
-                        <div class="polaroid bg-white p-4 rounded-2xl shadow-2xl transform -rotate-2 hover:rotate-0 transition-all duration-300">
-                            <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" 
-                                 class="w-48 h-48 md:w-56 md:h-56 object-cover rounded-lg mb-4" alt="Memory 2">
-                            <div class="text-center font-handwriting text-gray-700 text-lg">Summer Days ☀️</div>
-                        </div>
-                    </div>
-                    <button class="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg" onclick="nextStep()">
-                        Your Final Surprise 🎉
-                    </button>
-                </div>
+<div class="step" id="step4">
+    <h2 class="text-2xl md:text-5xl font-bold text-white mb-4 dancing-script">You Are So Beautiful ✨</h2>
+    <p class="text-base md:text-xl text-white/90 mb-6">A gallery of your amazing moments that make my heart skip a beat...</p>
+    
+    <!-- Photo Gallery - 2 Photos Per Row -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 mb-8">
+        <!-- Photo 1 -->
+        <div class="polaroid bg-white p-2 md:p-4 rounded-lg md:rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
+            <img src="../assets/deep5.png" 
+                 class="w-full h-32 md:h-56 object-cover rounded-md md:rounded-lg mb-2 md:mb-4" alt="Beautiful Deepthi 1">
+            <div class="text-center text-gray-700 text-xs md:text-lg font-medium">Stunning 😍</div>
+        </div>
+        
+        <!-- Photo 2 -->
+        <div class="polaroid bg-white p-2 md:p-4 rounded-lg md:rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
+            <img src="../assets/deep1.jpg" 
+                 class="w-full h-32 md:h-56 object-cover rounded-md md:rounded-lg mb-2 md:mb-4" alt="Beautiful Deepthi 2">
+            <div class="text-center text-gray-700 text-xs md:text-lg font-medium">Sweet 💕</div>
+        </div>
+        
+        <!-- Photo 3 -->
+        <div class="polaroid bg-white p-2 md:p-4 rounded-lg md:rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
+            <img src="../assets/deep2.jpg" 
+                 class="w-full h-32 md:h-56 object-cover rounded-md md:rounded-lg mb-2 md:mb-4" alt="Beautiful Deepthi 3">
+            <div class="text-center text-gray-700 text-xs md:text-lg font-medium">Perfect ⭐</div>
+        </div>
+        
+        <!-- Photo 4 -->
+        <div class="polaroid bg-white p-2 md:p-4 rounded-lg md:rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
+            <img src="../assets/deep3.jpg" 
+                 class="w-full h-32 md:h-56 object-cover rounded-md md:rounded-lg mb-2 md:mb-4" alt="Beautiful Deepthi 4">
+            <div class="text-center text-gray-700 text-xs md:text-lg font-medium">Glowing 🌟</div>
+        </div>
+        
+        <!-- Photo 5 -->
+        <div class="polaroid bg-white p-2 md:p-4 rounded-lg md:rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
+            <img src="../assets/deepth4.png" 
+                 class="w-full h-32 md:h-56 object-cover rounded-md md:rounded-lg mb-2 md:mb-4" alt="Beautiful Deepthi 5">
+            <div class="text-center text-gray-700 text-xs md:text-lg font-medium">Beauty 💖</div>
+        </div>
+        
+        <!-- Photo 6 -->
+        <div class="polaroid bg-white p-2 md:p-4 rounded-lg md:rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
+            <img src="../assets/Screenshot 2025-08-16 183626.png" 
+                 class="w-full h-32 md:h-56 object-cover rounded-md md:rounded-lg mb-2 md:mb-4" alt="Beautiful Deepthi 6">
+            <div class="text-center text-gray-700 text-xs md:text-lg font-medium">Angel 😇</div>
+        </div>
+    </div>
+    
+    <div class="bg-white/10 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-6 mb-6 md:mb-8 border border-white/20 mx-2">
+        <p class="text-base md:text-xl text-white/90 text-center">
+            Every photo tells a story of your beauty, inside and out. You make everything brighter just by being you! 🌈✨
+        </p>
+    </div>
+    
+    <button class="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold py-3 px-6 md:px-8 rounded-full text-base md:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg" onclick="nextStep()">
+        Your Final Surprise 🎉
+    </button>
+</div>
 
                 <!-- Step 5: Final Wish -->
                 <div class="step" id="step5">
                     <h1 class="text-3xl md:text-5xl font-bold text-white mb-8 dancing-script">
-                        🎉 Happy Birthday, <span id="finalName" class="text-pink-300">Jeya 💖</span>! 🎂
+                        🎉 Happy Birthday, Deepthi 💖
                     </h1>
                     
                     <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-6 md:p-8 mb-8 border border-white/20 space-y-4">
-                        <p class="text-lg md:text-xl text-white/90">✨ May your day be filled with endless joy, sweet laughter, and all the love your heart can hold ✨</p>
-                        <p class="text-lg md:text-xl text-white/90">🌟 You light up my world just by being in it — like a million stars in my sky. 🌌</p>
-                        <p class="text-lg md:text-xl text-white/90">⏳ Counting every moment until I can hold you and celebrate this magical day together! 🥰</p>
-                        <p class="text-lg md:text-xl text-white/90">💌 With all my love, forever and always... 💫</p>
+                        <p class="text-lg md:text-xl text-white/90"> May your day be filled with endless joy, sweet laughter, and all the love your heart can hold </p>
+                        <p class="text-lg md:text-xl text-white/90"> You light up my world just by being in it - like a million stars in my sky. </p>
+                        <p class="text-lg md:text-xl text-white/90"> Counting every moment until I can hold you and celebrate this magical day together! </p>
+                        <p class="text-lg md:text-xl text-white/90"> With all my love, forever and always... 💖</p>
                     </div>
 
-                    <div class="text-2xl md:text-3xl text-pink-300 mb-8 dancing-script">Yours truly, 💋</div>
+                    <div class="text-2xl md:text-3xl text-pink-300 mb-8 dancing-script">Yours truly 😇, </div>
 
-                    <div class="flex justify-center gap-4">
+                    <!-- <div class="flex justify-center gap-4">
                         <div class="social-icon bg-blue-600 hover:bg-blue-700 p-4 rounded-full cursor-pointer shadow-lg" onclick="shareOnSocial('facebook')" title="Share on Facebook">
                             <i class="fab fa-facebook-f text-white text-xl"></i>
                         </div>
@@ -388,7 +452,7 @@
                         <div class="social-icon bg-green-500 hover:bg-green-600 p-4 rounded-full cursor-pointer shadow-lg" onclick="shareOnSocial('whatsapp')" title="Share on WhatsApp">
                             <i class="fab fa-whatsapp text-white text-xl"></i>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -400,7 +464,7 @@
         let countdownInterval;
 
         // Birthday date: August 23, 2025 at midnight
-        const birthdayDate = new Date('2025-08-16T00:00:00');
+        const birthdayDate = new Date('2025-08-23T00:00:00');
 
         // Initialize particles
         if (typeof particlesJS !== 'undefined') {
@@ -512,7 +576,7 @@
         }
 
         function startTypingEffect() {
-            const message = `Dear Jeya, on this special day, I want you to know how much joy and light you bring into my life. Your smile brightens even the darkest days, and your laugh is the most beautiful sound I know. I am so grateful to have you in my life. Happy Birthday! 🎂✨`;
+            const message = `Hey My Dear Girl, on this special day, I want you to know how much joy and light you bring into my life. Your smile brightens even the darkest days, and your laugh is the most beautiful sound I know. I am so grateful to have you in my life. Happy Birthday! 🎂✨`;
             const typingElement = document.getElementById('typingText');
             typingElement.innerHTML = ''; // Clear any existing content
             let i = 0;
