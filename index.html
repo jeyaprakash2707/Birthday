@@ -142,6 +142,7 @@
         object-position: 0% 75%;
         }
         
+        
         .progress {
             background: linear-gradient(90deg, #ff6b9d, #ffd93d, #6bcf7f);
             transition: width 0.5s ease;
@@ -167,6 +168,9 @@
             transition: all 0.3s ease;
         }
         
+        .photo-2-custom {
+            object-position: center 20%; /* Moves image up to show face */
+        }
         .social-icon:hover {
             transform: translateY(-5px) scale(1.1);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
@@ -385,10 +389,10 @@
         
         <!-- Photo 2 -->
         <div class="polaroid bg-white p-2 md:p-4 rounded-lg md:rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
-           <img src="./assets/deep1.jpg" 
-     class="w-full h-32 md:h-56 object-cover object-bottom rounded-md md:rounded-lg mb-2 md:mb-4" alt="Beautiful Deepthi 1">
-            <div class="text-center text-gray-700 text-xs md:text-lg font-medium">Sweet 💕</div>
-        </div>
+    <img src="./assets/deep1.jpg" 
+         class="w-full h-32 md:h-56 object-cover object-top md:object-center rounded-md md:rounded-lg mb-2 md:mb-4" alt="Beautiful Deepthi 2">
+    <div class="text-center text-gray-700 text-xs md:text-lg font-medium">Sweet 💕</div>
+</div>
         
         <!-- Photo 3 -->
         <div class="polaroid bg-white p-2 md:p-4 rounded-lg md:rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300">
