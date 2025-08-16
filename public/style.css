@@ -1,0 +1,32 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+#bg-music {
+  display: none;
+}
+
+#play-music {
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#play-music:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.heart {
+  position: fixed;
+  top: -10px;
+  color: red;
+  font-size: 24px;
+  animation: fall linear forwards;
+  z-index: 1;
+}
+
+@keyframes fall {
+  from { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+  to { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
