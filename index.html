@@ -77,6 +77,96 @@
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
+        .ultimate-romantic {
+  background: linear-gradient(45deg, #FF6EC7, #00D4FF, #FFD700, #00FF88, #FF8C42, #9D4EDD);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: 
+    ultimateRomantic 4s ease-in-out infinite,
+    heartBeat 1.5s ease-in-out infinite,
+    softGlow 2s ease-in-out infinite alternate;
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  overflow: visible !important;
+  padding: 0;
+  margin: 0;
+  z-index: 10;
+}
+
+.ultimate-romantic::before,
+.ultimate-romantic::after {
+  content: '✨';
+  position: absolute;
+  font-size: 14px;
+  animation: sparkle 2s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.ultimate-romantic::before {
+  top: -10px;
+  left: -30px;
+  animation-delay: 0s;
+}
+
+.ultimate-romantic::after {
+  top: -8px;
+  right: -30px;
+  animation-delay: 1s;
+}
+
+.ultimate-romantic:hover {
+  animation-play-state: paused;
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
+}
+
+@keyframes ultimateRomantic {
+  0%, 100% { background-position: 0% 50%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 50% 100%; }
+  75% { background-position: 50% 0%; }
+}
+
+@keyframes heartBeat {
+  0%, 100% { 
+    transform: scale(1);
+    filter: drop-shadow(0 0 8px rgba(255, 110, 199, 0.5));
+  }
+  14% { 
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 18px rgba(0, 212, 255, 0.7));
+  }
+  28% { 
+    transform: scale(1);
+    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.6));
+  }
+  42% { 
+    transform: scale(1.01);
+    filter: drop-shadow(0 0 15px rgba(0, 255, 136, 0.6));
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% { 
+    opacity: 0.6; 
+    transform: scale(0.8) rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.2) rotate(180deg);
+    filter: hue-rotate(180deg);
+  }
+}
+
+@keyframes softGlow {
+  0% { filter: drop-shadow(0 0 8px rgba(255, 110, 199, 0.5)); }
+  100% { filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.8)); }
+}
         
         .heart {
             animation: heartbeat 1.5s ease-in-out infinite;
@@ -457,6 +547,9 @@ video::-webkit-media-controls-pause-button {
         <div class="text-lg md:text-2xl text-pink-300 font-semibold">
             💖 August 23, 2025 💖
         </div>
+        <p class="text-sm md:text-base text-4xl lg:text-4xl text-white/90 mb-4 ultimate-romantic ">
+             You are my today and all of my tomorrows...
+</p>
     </div>
 
     <!-- Countdown Timer - Compact for Mobile -->
@@ -776,7 +869,7 @@ video::-webkit-media-controls-pause-button {
         let countdownInterval;
 
         // Birthday date: August 23, 2025 at midnight
-        const birthdayDate = new Date('2025-08-23T00:00:00');
+        const birthdayDate = new Date('2025-08-16T00:00:00');
 
         // Music Player Variables - Countdown
         let isPlaying = false;
