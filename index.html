@@ -1757,6 +1757,19 @@ function toggleVideoFullscreen() {
 document.addEventListener('DOMContentLoaded', () => {
     initVideoPlayer();
 });
+ document.getElementById('videoCover').addEventListener('click', function() {
+            // Hide the cover
+            document.getElementById('videoCover').classList.add('hidden');
+            // Show the iframe
+            document.getElementById('videoIframe').classList.remove('hidden');
+            
+            // Optional: Add autoplay parameter to the iframe src
+            const iframe = document.getElementById('videoIframe');
+            const currentSrc = iframe.src;
+            if (!currentSrc.includes('&autoplay=1')) {
+                iframe.src = currentSrc + '&autoplay=1';
+            }
+        });
     </script>
 </body>
 </html>
