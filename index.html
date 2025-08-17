@@ -10,212 +10,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <style>
-        .heartbeat-glow {
-  animation: heartbeatGlow 2.5s ease-in-out infinite;
-  text-shadow: 0 0 10px rgba(255, 192, 203, 0.5);
-  background: linear-gradient(45deg, #ff9a9e, #fecfef, #fecfef, #ff9a9e);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-@keyframes heartbeatGlow {
-  0%, 100% {
-    transform: scale(1);
-    background-position: 0% 50%;
-    filter: drop-shadow(0 0 5px rgba(255, 182, 193, 0.6));
-  }
-  14% {
-    transform: scale(1.02);
-    filter: drop-shadow(0 0 15px rgba(255, 182, 193, 0.8));
-  }
-  28% {
-    transform: scale(1);
-    background-position: 100% 50%;
-    filter: drop-shadow(0 0 8px rgba(255, 182, 193, 0.7));
-  }
-}
-
-@keyframes softGlow {
-  0% { filter: drop-shadow(0 0 5px rgba(255, 182, 193, 0.3)); }
-  100% { filter: drop-shadow(0 0 12px rgba(255, 182, 193, 0.6)); }
-}
-.shimmer-love {
-  position: relative;
-  background: linear-gradient(90deg, #fff 0%, #ffb6c1 25%, #ff69b4 50%, #ffb6c1 75%, #fff 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shimmerLove 3s ease-in-out infinite;
-}
-
-@keyframes shimmerLove {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
-/* Option 3: Gentle Pulse with Stars */
-.gentle-pulse-stars {
-  animation: gentlePulse 2s ease-in-out infinite alternate;
-  position: relative;
-  background: linear-gradient(45deg, #ffeaa7, #fab1a0, #fd79a8, #fdcb6e);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.gentle-pulse-stars::before {
-  content: '✨';
-  position: absolute;
-  left: -25px;
-  top: 50%;
-  transform: translateY(-50%);
-  animation: twinkle 1.5s ease-in-out infinite alternate;
-}
-
-.gentle-pulse-stars::after {
-  content: '✨';
-  position: absolute;
-  right: -25px;
-  top: 50%;
-  transform: translateY(-50%);
-  animation: twinkle 1.5s ease-in-out infinite alternate 0.7s;
-}
-
-@keyframes gentlePulse {
-  0% {
-    transform: scale(1);
-    background-position: 0% 50%;
-    filter: brightness(1);
-  }
-  100% {
-    transform: scale(1.01);
-    background-position: 100% 50%;
-    filter: brightness(1.1);
-  }
-}
-
-@keyframes twinkle {
-  0% { opacity: 0.5; transform: translateY(-50%) scale(0.8); }
-  100% { opacity: 1; transform: translateY(-50%) scale(1.2); }
-}
-
-/* Option 4: Romantic Typewriter */
-.romantic-typewriter {
-  overflow: hidden;
-  border-right: 2px solid rgba(255, 182, 193, 0.7);
-  white-space: nowrap;
-  animation: romanticTyping 4s steps(40, end), blinkCursor 0.8s step-end infinite;
-  background: linear-gradient(45deg, #ff9a9e, #fecfef);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-@keyframes romanticTyping {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blinkCursor {
-  from, to { border-color: transparent; }
-  50% { border-color: rgba(255, 182, 193, 0.7); }
-}
-
-/* Option 5: Ultimate Romantic with Heartbeat & Fireworks (Recommended) */
-.ultimate-romantic {
-  background: linear-gradient(45deg, #FF6EC7, #00D4FF, #FFD700, #00FF88, #FF8C42, #9D4EDD);
-  background-size: 400% 400%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: 
-    ultimateRomantic 4s ease-in-out infinite,
-    heartBeat 1.5s ease-in-out infinite,
-    softGlow 2s ease-in-out infinite alternate;
-  position: relative;
-  font-weight: 600;
-  letter-spacing: 0.8px;
-  overflow: visible !important;
-  padding: 10px 0;
-  margin:  0;
-  z-index: 10;
-}
-
-.ultimate-romantic::before,
-.ultimate-romantic::after {
-  content: '✨';
-  position: absolute;
-  font-size: 14px;
-  animation: sparkle 2s ease-in-out infinite alternate;
-  pointer-events: none;
-  z-index: -1;
-}
-
-.ultimate-romantic::before {
-  top: -10px;
-  left: -30px;
-  animation-delay: 0s;
-}
-
-.ultimate-romantic::after {
-  top: -8px;
-  right: -30px;
-  animation-delay: 1s;
-}
-
-.ultimate-romantic:hover {
-  animation-play-state: paused;
-  transform: scale(1.03);
-  transition: transform 0.3s ease;
-}
-
-@keyframes ultimateRomantic {
-  0%, 100% { background-position: 0% 50%; }
-  25% { background-position: 100% 50%; }
-  50% { background-position: 50% 100%; }
-  75% { background-position: 50% 0%; }
-}
-
-@keyframes heartBeat {
-  0%, 100% { 
-    transform: scale(1);
-    filter: drop-shadow(0 0 8px rgba(255, 110, 199, 0.5));
-  }
-  14% { 
-    transform: scale(1.02);
-    filter: drop-shadow(0 0 18px rgba(0, 212, 255, 0.7));
-  }
-  28% { 
-    transform: scale(1);
-    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.6));
-  }
-  42% { 
-    transform: scale(1.01);
-    filter: drop-shadow(0 0 15px rgba(0, 255, 136, 0.6));
-  }
-}
-
-@keyframes sparkle {
-  0%, 100% { 
-    opacity: 0.6; 
-    transform: scale(0.8) rotate(0deg);
-    filter: hue-rotate(0deg);
-  }
-  50% { 
-    opacity: 1; 
-    transform: scale(1.2) rotate(180deg);
-    filter: hue-rotate(180deg);
-  }
-}
-
-@keyframes softGlow {
-  0% { filter: drop-shadow(0 0 8px rgba(255, 110, 199, 0.5)); }
-  100% { filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.8)); }
-}
         body {
             font-family: 'Montserrat', sans-serif;
         }
@@ -544,7 +338,7 @@
             transition: all 0.3s ease;
             border: 1px solid transparent;
         }
-        
+
         .playlist-item:hover {
             background: rgba(255, 255, 255, 0.2);
             border-color: rgba(255, 107, 157, 0.5);
@@ -625,6 +419,26 @@
                 width: 60px;
             }
         }
+      .video-player {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the video controls to match theme */
+video::-webkit-media-controls-panel {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-pause-button {
+    background-color: #ff6b9d;
+    border-radius: 50%;
+}
     </style>
 </head>
 <body class="bg-gradient-to-br from-purple-600 via-pink-600 to-blue-600 min-h-screen overflow-x-hidden pb-8">
@@ -640,11 +454,8 @@
         <p class="text-sm md:text-xl lg:text-2xl text-white/90 mb-2">
             Your special day is almost here, my love! ✨
         </p>
-        <div class="text-lg md:text-2xl text-white/90 font-bold">
+        <div class="text-lg md:text-2xl text-pink-300 font-semibold">
             💖 August 23, 2025 💖
-        </div>
-        <div id="message" class="text-sm md:text-lg text-white/90 mb-3  font-bold ultimate-romantic">
-            You are my today and all of my tomorrows...
         </div>
     </div>
 
@@ -758,23 +569,12 @@
                     <div class="text-white/60 text-xs ml-2 flex-shrink-0">4:22</div>
                 </div>
             </div>
-            <div class="playlist-item" onclick="selectSong(2)">
-                <div class="flex justify-between items-center">
-                    <div class="min-w-0 flex-1">
-                        <div class="text-white text-sm font-medium truncate">3. Kathal Mazhaiye</div>
-                        <div class="text-white/60 text-xs truncate">Arul</div>
-                    </div>
-                    <div class="text-white/60 text-xs ml-2 flex-shrink-0">1:25</div>
-                </div>
-            </div>
+
         </div>
     </div>
 
     <!-- Bottom Message - Mobile Optimized -->
     <div class="bg-white/10 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/20 max-w-sm md:max-w-2xl w-full mt-6">
-        <!-- <p class="text-sm md:text-lg text-white/90 mb-3 ultimate-romantic">
-            You are my today and all of my tomorrows...
-        </p> -->
         <p class="text-sm md:text-lg text-white/90 mb-3">
             💝 I've prepared something very special for your birthday...
         </p>
@@ -921,60 +721,7 @@
                     </h1>
                     
                     <!-- Music Player in Final Step -->
-                    <div class="music-player max-w-sm md:max-w-2xl w-full mx-auto mb-8" id="finalMusicPlayer">
-                        <div class="text-center mb-4">
-                            <h3 class="text-lg md:text-xl text-white font-semibold dancing-script mb-1">🎵 Your Special Birthday Song 🎵</h3>
-                            <p class="text-sm text-white/80">Let the music celebrate you</p>
-                        </div>
-                        
-                        <!-- Music Player Interface -->
-                        <div class="flex items-center gap-4 mb-4">
-                            <!-- Album Art -->
-                            <div class="album-art" id="finalAlbumArt">
-                                <i class="fas fa-heart text-white text-2xl"></i>
-                            </div>
-                            
-                            <!-- Song Info and Controls -->
-                            <div class="song-info">
-                                <div class="song-title text-white font-medium" id="finalCurrentSong">Happy Birthday My Love</div>
-                                <div class="song-artist text-white/70 text-sm" id="finalCurrentArtist">Special Dedication</div>
-                                
-                                <!-- Progress Bar -->
-                                <div class="progress-container mt-2" onclick="seekToFinal(event)">
-                                    <div class="progress-filled" id="finalProgressFilled"></div>
-                                </div>
-                                
-                                <!-- Time Display -->
-                                <div class="flex justify-between text-xs text-white/60 mt-1">
-                                    <span id="finalCurrentTime">0:00</span>
-                                    <span id="finalTotalTime">3:45</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Control Buttons -->
-                        <div class="flex items-center justify-center gap-4">
-                            <button class="control-btn" onclick="previousSongFinal()" title="Previous">
-                                <i class="fas fa-step-backward"></i>
-                            </button>
-                            
-                            <button class="play-pause-btn" id="finalPlayPauseBtn" onclick="togglePlayPauseFinal()" title="Play/Pause">
-                                <i class="fas fa-play" id="finalPlayPauseIcon"></i>
-                            </button>
-                            
-                            <button class="control-btn" onclick="nextSongFinal()" title="Next">
-                                <i class="fas fa-step-forward"></i>
-                            </button>
-                            
-                            <!-- Volume Control -->
-                            <div class="flex items-center gap-2 ml-4">
-                                <i class="fas fa-volume-down text-white/70"></i>
-                                <input type="range" min="0" max="100" value="70" 
-                                       class="volume-control"
-                                       id="finalVolumeControl" onchange="changeVolumeFinal()">
-                            </div>
-                        </div>
-                    </div>
+                   
                     
                     <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-6 md:p-8 mb-8 border border-white/20 space-y-4">
                         <p class="text-lg md:text-xl text-white/90"> May your day be filled with endless joy, sweet laughter, and all the love your heart can hold </p>
@@ -982,6 +729,40 @@
                         <p class="text-lg md:text-xl text-white/90"> Counting every moment until I can hold you and celebrate this magical day together! </p>
                         <p class="text-lg md:text-xl text-white/90"> With all my love, forever and always... 💖</p>
                     </div>
+                   
+    
+    <!-- Video Container -->
+    <div class="video-player max-w-sm md:max-w-2xl w-full mx-auto mb-8">
+    <div class="text-center mb-4">
+        <h3 class="text-lg md:text-xl text-white font-semibold dancing-script mb-1">🎬 Special Birthday Video 🎬</h3>
+        <p class="text-sm text-white/80">A special message just for you</p>
+    </div>
+    
+    <!-- Simple Video with Browser Controls -->
+    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
+        <video 
+            id="birthdayVideo"
+            class="w-full h-auto rounded-xl"
+            controls
+            preload="metadata"
+            poster="./assets/Frame 1.png"
+        >
+            <source src="./assets/Stories_For_Render_1.mp4" type="video/mp4">
+            <source src="./assets/your-video-name.webm" type="video/webm">
+            <p class="text-white text-center py-4">
+                Your browser doesn't support HTML5 video. 
+                <a href="./assets/your-video-name.mp4" class="text-pink-300 underline">Download the video</a>
+            </p>
+        </video>
+    </div>
+    
+    <!-- Video Description -->
+    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 mt-4 border border-white/20">
+        <p class="text-white/90 text-center text-sm md:text-base">
+            💕 A heartfelt message created especially for your special day! 💕
+        </p>
+    </div>
+</div>
 
                     <div class="text-2xl md:text-3xl text-pink-300 mb-8 dancing-script">Yours truly 😇, </div>
                 </div>
@@ -995,7 +776,7 @@
         let countdownInterval;
 
         // Birthday date: August 23, 2025 at midnight
-        const birthdayDate = new Date('2025-08-23T00:00:00');
+        const birthdayDate = new Date('2025-08-16T00:00:00');
 
         // Music Player Variables - Countdown
         let isPlaying = false;
@@ -1018,22 +799,15 @@
                 title: "Song-For-Your-Special-Day", 
                 artist: "Special Artist", 
                 duration: "3:36", 
-                durationSec: 216,
+                durationSec: 260,
                 audioUrl: "assets/Song-For-Your-Special-Day.mp3"  // This will play your music.mp3 file
             },
             { 
                 title: "Tum Hi Ho", 
                 artist: "Another Artist", 
                 duration: "4:22", 
-                durationSec: 262,
+                durationSec: 263,
                 audioUrl: "assets/Tum Hi Ho.mp3"  // Same file or add more files
-            },
-            { 
-                title: "Kathal Mazhaiye", 
-                artist: "Another Artist", 
-                duration: "1:25", 
-                durationSec: 85,
-                audioUrl: "assets/kathal-mazhaiye.mp3"  // Same file or add more files
             },
             
         ];
@@ -1042,8 +816,8 @@
             { 
                 title: "Birthday Special", 
                 artist: "For My Love", 
-                duration: "3:36", 
-                durationSec: 216,
+                duration: "3:45", 
+                durationSec: 225,
                 audioUrl: "/assets/Song-For-Your-Special-Day.mp3"  // Uses your music.mp3 file
             },
             { 
@@ -1553,6 +1327,225 @@
             checkBirthdayStatus();
             initMusicPlayer();
         });
+        let videoIsPlaying = false;
+let videoCurrentTime = 0;
+let videoDuration = 132; // 2:12 in seconds
+let videoVolume = 0.8;
+let videoIsMuted = false;
+let videoUpdateInterval;
+
+// Get video element
+const video = document.getElementById('birthdayVideo');
+
+// Initialize video player
+function initVideoPlayer() {
+    if (video) {
+        // Set initial volume
+        video.volume = videoVolume;
+        
+        // Event listeners
+        video.addEventListener('loadedmetadata', () => {
+            videoDuration = Math.floor(video.duration);
+            updateVideoTimeDisplay();
+        });
+        
+        video.addEventListener('timeupdate', () => {
+            if (video.duration) {
+                videoCurrentTime = Math.floor(video.currentTime);
+                updateVideoProgressBar();
+                updateVideoTimeDisplay();
+            }
+        });
+        
+        video.addEventListener('ended', () => {
+            videoIsPlaying = false;
+            document.getElementById('videoPlayPauseIcon').classList.remove('fa-pause');
+            document.getElementById('videoPlayPauseIcon').classList.add('fa-play');
+            document.getElementById('videoPlayOverlay').style.opacity = '1';
+            clearInterval(videoUpdateInterval);
+        });
+        
+        video.addEventListener('play', () => {
+            document.getElementById('videoPlayOverlay').style.opacity = '0';
+            document.getElementById('videoLoading').style.opacity = '0';
+        });
+        
+        video.addEventListener('waiting', () => {
+            document.getElementById('videoLoading').style.opacity = '1';
+        });
+        
+        video.addEventListener('canplay', () => {
+            document.getElementById('videoLoading').style.opacity = '0';
+        });
+        
+        video.addEventListener('error', (e) => {
+            console.error('Video error:', e);
+            document.getElementById('videoLoading').style.opacity = '0';
+        });
+    }
+}
+
+function toggleVideoPlayPause() {
+    const playPauseIcon = document.getElementById('videoPlayPauseIcon');
+    const playOverlay = document.getElementById('videoPlayOverlay');
+    
+    if (videoIsPlaying) {
+        videoIsPlaying = false;
+        playPauseIcon.classList.remove('fa-pause');
+        playPauseIcon.classList.add('fa-play');
+        playOverlay.style.opacity = '1';
+        clearInterval(videoUpdateInterval);
+        
+        if (video) {
+            video.pause();
+        }
+    } else {
+        videoIsPlaying = true;
+        playPauseIcon.classList.remove('fa-play');
+        playPauseIcon.classList.add('fa-pause');
+        playOverlay.style.opacity = '0';
+        
+        if (video) {
+            video.play().catch(error => {
+                console.error('Video play error:', error);
+                // Fallback to manual progress tracking
+                startVideoProgress();
+            });
+        } else {
+            startVideoProgress();
+        }
+    }
+}
+
+function startVideoProgress() {
+    videoUpdateInterval = setInterval(() => {
+        videoCurrentTime += 1;
+        updateVideoProgressBar();
+        updateVideoTimeDisplay();
+        
+        if (videoCurrentTime >= videoDuration) {
+            videoCurrentTime = 0;
+            videoIsPlaying = false;
+            document.getElementById('videoPlayPauseIcon').classList.remove('fa-pause');
+            document.getElementById('videoPlayPauseIcon').classList.add('fa-play');
+            document.getElementById('videoPlayOverlay').style.opacity = '1';
+            clearInterval(videoUpdateInterval);
+        }
+    }, 1000);
+}
+
+function updateVideoProgressBar() {
+    const progress = (videoCurrentTime / videoDuration) * 100;
+    const clampedProgress = Math.max(0, Math.min(100, progress));
+    
+    document.getElementById('videoProgressFilled').style.width = clampedProgress + '%';
+    document.getElementById('videoProgressThumb').style.left = clampedProgress + '%';
+}
+
+function updateVideoTimeDisplay() {
+    const currentMinutes = Math.floor(videoCurrentTime / 60);
+    const currentSeconds = videoCurrentTime % 60;
+    document.getElementById('videoCurrentTime').textContent = 
+        currentMinutes + ':' + currentSeconds.toString().padStart(2, '0');
+    
+    if (video && video.duration) {
+        const totalMinutes = Math.floor(video.duration / 60);
+        const totalSeconds = Math.floor(video.duration % 60);
+        document.getElementById('videoTotalTime').textContent = 
+            totalMinutes + ':' + totalSeconds.toString().padStart(2, '0');
+    } else {
+        document.getElementById('videoTotalTime').textContent = '2:12';
+    }
+}
+
+function seekToVideo(event) {
+    const progressContainer = event.currentTarget;
+    const rect = progressContainer.getBoundingClientRect();
+    const clickPosition = (event.clientX - rect.left) / rect.width;
+    
+    if (video && !video.error) {
+        const seekTime = clickPosition * video.duration;
+        video.currentTime = seekTime;
+        videoCurrentTime = Math.floor(seekTime);
+    } else {
+        videoCurrentTime = Math.floor(clickPosition * videoDuration);
+    }
+    
+    updateVideoProgressBar();
+    updateVideoTimeDisplay();
+}
+
+function changeVideoVolume() {
+    videoVolume = document.getElementById('videoVolumeControl').value / 100;
+    
+    if (video) {
+        video.volume = videoVolume;
+        video.muted = false;
+    }
+    
+    videoIsMuted = false;
+    updateVolumeIcon();
+}
+
+function toggleVideoMute() {
+    if (video) {
+        video.muted = !video.muted;
+        videoIsMuted = video.muted;
+    } else {
+        videoIsMuted = !videoIsMuted;
+    }
+    
+    updateVolumeIcon();
+}
+
+function updateVolumeIcon() {
+    const volumeIcon = document.getElementById('videoVolumeIcon');
+    const volumeControl = document.getElementById('videoVolumeControl');
+    
+    if (videoIsMuted || (video && video.muted)) {
+        volumeIcon.className = 'fas fa-volume-mute';
+        volumeControl.value = 0;
+    } else if (videoVolume > 0.5) {
+        volumeIcon.className = 'fas fa-volume-up';
+        volumeControl.value = videoVolume * 100;
+    } else if (videoVolume > 0) {
+        volumeIcon.className = 'fas fa-volume-down';
+        volumeControl.value = videoVolume * 100;
+    } else {
+        volumeIcon.className = 'fas fa-volume-mute';
+        volumeControl.value = 0;
+    }
+}
+
+function toggleVideoFullscreen() {
+    const videoContainer = video.parentElement;
+    const fullscreenIcon = document.getElementById('videoFullscreenIcon');
+    
+    if (!document.fullscreenElement) {
+        if (videoContainer.requestFullscreen) {
+            videoContainer.requestFullscreen();
+        } else if (videoContainer.webkitRequestFullscreen) {
+            videoContainer.webkitRequestFullscreen();
+        } else if (videoContainer.msRequestFullscreen) {
+            videoContainer.msRequestFullscreen();
+        }
+        fullscreenIcon.className = 'fas fa-compress';
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+        fullscreenIcon.className = 'fas fa-expand';
+    }
+}
+
+// Initialize video player when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    initVideoPlayer();
+});
     </script>
 </body>
 </html>
