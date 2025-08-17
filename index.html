@@ -519,15 +519,41 @@
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-/* Style the video controls to match theme */
-video::-webkit-media-controls-panel {
-    background-color: rgba(0, 0, 0, 0.8);
+/* Portrait Video Container */
+.portrait-video-container {
+    width: 100%;
+    height: 600px; /* Adjust this height as needed */
+    max-height: 70vh;
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #000;
 }
 
-video::-webkit-media-controls-play-button,
-video::-webkit-media-controls-pause-button {
-    background-color: #ff6b9d;
-    border-radius: 50%;
+.portrait-iframe {
+    border-radius: 1rem;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .portrait-video-container {
+        height: 500px;
+        max-height: 60vh;
+    }
+    
+    .video-player {
+        max-width: 90vw !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .portrait-video-container {
+        height: 400px;
+        max-height: 50vh;
+    }
 }
     </style>
 </head>
@@ -824,32 +850,26 @@ video::-webkit-media-controls-pause-button {
                     </div>
                    
     
-    <!-- Video Container -->
-    <div class="video-player max-w-sm md:max-w-2xl w-full mx-auto mb-8">
+   <div class="video-player max-w-sm md:max-w-md w-full mx-auto mb-8">
     <div class="text-center mb-4">
         <h3 class="text-lg md:text-xl text-white font-semibold dancing-script mb-1">🎬 Special Birthday Video 🎬</h3>
         <p class="text-sm text-white/80">A special message just for you</p>
     </div>
     
-    <!-- Simple Video with Browser Controls -->
+    <!-- Portrait Video Container -->
     <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
-        <video 
-            id="birthdayVideo"
-            class="w-full h-auto rounded-xl"
-            controls
-            preload="metadata"
-            poster="./assets/Frame 1.png"
-        >
-            <source src="./assets/Stories_For_Render_1.mp4" type="video/mp4">
-            <source src="./assets/your-video-name.webm" type="video/webm">
-            <p class="text-white text-center py-4">
-                Your browser doesn't support HTML5 video. 
-                <a href="./assets/your-video-name.mp4" class="text-pink-300 underline">Download the video</a>
-            </p>
-        </video>
+        <div class="portrait-video-container">
+            <iframe 
+                src="https://drive.google.com/file/d/16g1e4Rjqe24D2GdjjUpNoz-H-wKgv-pK/preview" 
+                width="100%" 
+                height="100%"
+                allow="autoplay"
+                class="portrait-iframe"
+                frameborder="0">
+            </iframe>
+        </div>
     </div>
     
-    <!-- Video Description -->
     <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 mt-4 border border-white/20">
         <p class="text-white/90 text-center text-sm md:text-base">
             💕 A heartfelt message created especially for your special day! 💕
